@@ -1,30 +1,44 @@
 'use strict'
 
+// Fazer o javascript interagir c/ os botões criados no html
 const botaoBuscar = document.getElementById('buscar')
-const barraPesquisa = document.getElementById('barra-pesquisa')
 
-// const main = document.createElement('main');
-// document.body.appendChild(main);
+// Criou a main e colocou no body do documento
+const main = document.createElement('main');
+document.body.appendChild(main);
 
-async function buscarImagens(raca) { // tudo no computador acontece em série (async falar para a função esperar a API)
-    const url = `https://dog.ceo/api/breed/${raca}/images`
-    const response = await fetch(url) // await = falar para o consolog esperar a API
-    const imagens = await response.json() // transpormar a resposta da API em json (não use await em tudo)
-    console.log(imagens)
-    return imagens.messagem
-}
+botaoBuscar.addEventListener('click', () => {
+    const nomeBusca = barraPesquisa.value.toLowerCase); // trim = ignorar espaços, indicar o valor que vai entrar no input
+    main.innerHTML = ''; // Limpa resultados anteriores
 
-buscarImagens('bulldog');
+    if (nomeBusca) {
+        async function buscarImagens(raca) { // tudo no computador acontece em série (async falar para a função esperar a API)
+            const url = `https://dog.ceo/api/breed/${raca}/images`
+            const response = await fetch(url) // await = falar para o consolog esperar a API
+            const imagens = await response.json() // transpormar a resposta da API em json (não use await em tudo)
+            return imagens.message
+        }
 
-// botaoBuscar.addEventListener('click', () => {
-//     const valorBusca = barraPesquisa.value.trim();
-//     main.innerHTML = ''; // Limpa resultados anteriores
-//     if (valorBusca) {
-//         const resultado = document.createElement('p');
-//         resultado.textContent = `Você buscou: ${valorBusca}`;
-//         main.appendChild(resultado);
+        async function mostrarImagens() {
+            const galeria = document.getElementById('galeria')
+            const raca = nomeBusca;
 
-//     } else {
-//         prompt('Digite o nome de uma raça!');
-//     }
-// });
+            galeria.innerHTML = ""
+
+            const listaImg = await buscarImagens(raca)
+
+            listaImg.forEach(url => {
+                const img = document.createElement("img")
+                img.src = url
+                galeria.appendChild(img)
+            })
+
+        }
+
+        mostrarImagens;
+
+    } else {
+        alert('Digite o nome de uma raça!');
+    }
+
+});

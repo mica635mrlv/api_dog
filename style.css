@@ -15,10 +15,15 @@ li {
     list-style: none;
 }
 
+:root {
+    --color-multiuso: #388E3C;
+    --font-principal: Verdana, Geneva, Tahoma, sans-serif;
+}
+
 body {
     background-color: #E8F5E9;
     height: 100vh;
-    color: #388E3C;
+    color: var(--color-multiuso);
     display: flex;
     flex-direction: column;
     font-family: Georgia, 'Times New Roman', Times, serif;
@@ -27,15 +32,15 @@ body {
 header {
     background-color: #81C784;
     justify-items: center;
-    border-bottom: 2px solid #388E3C;
+    border-bottom: 2px solid var(--color-multiuso);
 }
 
 .menu {
-    height: 50px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 1150px;
+    height: 55px;
 }
 
 .menu h1 {
@@ -50,10 +55,10 @@ header {
 }
 
 .container-input input {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: var(--font-principal);
     text-align: center;
     width: 650px;
-    border: 2px solid #388E3C;
+    border: 2px solid var(--color-multiuso);
     border-radius: 8px;
     height: 32px;
     font-size: 13px;
@@ -62,9 +67,9 @@ header {
 .container-button button {
     width: 130px;
     height: 32px;
-    background-color: #388E3C;
-    border: 2px solid #388E3C;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: var(--color-multiuso);
+    border: 2px solid var(--color-multiuso);
+    font-family: var(--font-principal);
     border-radius: 8px;
     font-weight: bold;
 }
