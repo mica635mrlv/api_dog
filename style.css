@@ -16,49 +16,55 @@ li {
 }
 
 body {
-    background-color: rgb(187, 255, 167);
-    background-size: cover;
+    background-color: #E8F5E9;
     height: 100vh;
-    /* overflow: hidden; */
+    color: #388E3C;
     display: flex;
-    flex-direction: column; 
-    /* font-family: Arial, sans-serif; */
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    flex-direction: column;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 header {
-    background-color: white;
+    background-color: #81C784;
+    justify-items: center;
+    border-bottom: 2px solid #388E3C;
+}
+
+.menu {
     height: 50px;
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 70px;
+    justify-content: space-between;
+    width: 1150px;
 }
 
-.container{
+.menu h1 {
+    font-size: 25px;
+}
+
+.container {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 20px;
-    background-color: white;
 }
 
 .container-input input {
-    font-size: 1rem;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: center;
-    height: 2.4rem;
-    width: 800px;
-    border: 2px solid rgb(187, 255, 167);
+    width: 650px;
+    border: 2px solid #388E3C;
     border-radius: 8px;
+    height: 32px;
+    font-size: 13px;
 }
 
 .container-button button {
-    padding-block: 8px;
-    width: 200px;
-    height: 38px;
-    background-color: rgb(187, 255, 167);
-    border: 2px solid rgb(187, 255, 167);
+    width: 130px;
+    height: 32px;
+    background-color: #388E3C;
+    border: 2px solid #388E3C;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     border-radius: 8px;
+    font-weight: bold;
 }
