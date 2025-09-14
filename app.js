@@ -8,7 +8,7 @@ const main = document.createElement('main');
 document.body.appendChild(main);
 
 botaoBuscar.addEventListener('click', () => {
-    const nomeBusca = barraPesquisa.value.toLowerCase); // trim = ignorar espaços, indicar o valor que vai entrar no input
+    const nomeBusca = barraPesquisa.value.trim().toLowerCase(); // trim = ignorar espaços, indicar o valor que vai entrar no input
     main.innerHTML = ''; // Limpa resultados anteriores
 
     if (nomeBusca) {
@@ -35,7 +35,7 @@ botaoBuscar.addEventListener('click', () => {
 
         }
 
-        mostrarImagens;
+        mostrarImagens();
 
     } else {
         alert('Digite o nome de uma raça!');
