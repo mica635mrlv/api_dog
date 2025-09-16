@@ -22,7 +22,7 @@ li {
 
 body {
     background-color: #E8F5E9;
-    height: 100vh;
+    min-height: 100vh;
     color: var(--color-multiuso);
     display: flex;
     flex-direction: column;
@@ -33,6 +33,8 @@ header {
     background-color: #81C784;
     justify-items: center;
     border-bottom: 2px solid var(--color-multiuso);
+    position: fixed;
+    width: 100%;
 }
 
 .menu {
@@ -72,4 +74,35 @@ header {
     font-family: var(--font-principal);
     border-radius: 8px;
     font-weight: bold;
+}
+
+main {
+    justify-content: center;
+    display: flex;
+    margin-top: 85px;
+    margin-bottom: -8px;
+}
+
+.galeria {
+    gap: 15px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+img {
+    height: 240px;
+    width: 248px;
+    border-radius: 8px;
+}
+
+footer {
+    background-color: #81C784;
+    bottom: 0;
+    height: 40px;
+    position: fixed;
+    width: 100%;
+    border-top: 2px solid var(--color-multiuso);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
